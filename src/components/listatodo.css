@@ -1,0 +1,190 @@
+.container-todo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+}
+
+h2{
+    font-size: 3rem;
+
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+}
+
+input {
+  width: 220px;
+  height: 45px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+
+input:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+input:active {
+  transform: scale(0.95);
+}
+
+input:focus {
+  border: 2px solid grey;
+}
+
+.btn-agregar {
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+.btn-agregar .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-agregar .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.btn-agregar .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.btn-agregar:hover {
+  background-color: var(--hover-color);
+}
+
+.btn-agregar:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.btn-agregar:hover .arrow:before {
+  right: 0;
+}
+
+.btn-borrar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 15px 20px;
+  background-color: #212121;
+  border: none;
+  font: inherit;
+  color: #e8e8e8;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: not-allowed;
+  overflow: hidden;
+  transition: all 0.3s ease cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.btn-borrar span {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.btn-borrar::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  translate: 0 105%;
+  background-color: #F53844;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.btn-borrar svg {
+  width: 32px;
+  height: 32px;
+  fill: #F53844;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.btn-borrar:hover {
+  animation: shake 0.2s linear 1;
+}
+
+.btn-borrar:hover::before {
+  translate: 0 0;
+}
+
+.btn-borrar:hover svg {
+  fill: #e8e8e8;
+}
+
+@keyframes shake {
+  0% {
+    rotate: 0deg;
+  }
+
+  33% {
+    rotate: 10deg;
+  }
+
+  66% {
+    rotate: -10deg;
+  }
+
+  100% {
+    rotate: 10deg;
+  }
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    gap: 1rem;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
